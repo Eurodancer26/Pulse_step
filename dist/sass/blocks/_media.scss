@@ -1,6 +1,14 @@
 @media (max-width: 1200px) {
-    .promo {
-        background-size: 100% 100%;
+    .consultation {
+        .title {
+            text-align: center;
+        }
+        &__descr {
+            text-align: center;
+        }
+        .feed-form {
+            margin: 36px auto;
+        }
     }
 }
 @media (max-width: 991px) {
@@ -9,11 +17,34 @@
         margin: 0 auto;
     }
     .promo {
-        background-size: 100% 100%;
+        background: url('https://fitwinkel.nl/resize/polar%20m200%20sporthorloge%20blauw_3776260690958.jpg/0/1100/True/polar-m200-sporthorloge-blauw.jpg') center (center/cover) no-repeat;
         &__wrapper {
             align-items: center;
         }
     }
+    .consultation {
+        .title {
+            font-size: 30px;
+        }
+        &__descr {
+            font-size: 18px;
+        }
+        .feed-form {
+            margin: 36px auto;
+        }
+    }
+    .carousel {
+        &__inner {
+            width: 20%;
+            div {
+                img {
+                    display: block;
+                    margin: 0 auto;
+                    width: 90%;
+                }
+            }
+        }
+    }  
 }
 @media (max-width: 767px) {
     .header {
@@ -22,6 +53,7 @@
        }
     }
     .promo {
+        background: url('https://magazin-sportlife.ru/img/upload/opisanie_tovary/3d44fe6794b33268f144153ad938bf2b.jpg') center (center/cover) no-repeat;        
         &__header {
             font-size: 35px;
         }
@@ -52,7 +84,13 @@
         &__descr {
             margin-top: 10px;
         }
-    }    
+    }
+    .carousel {
+        &__inner {
+            width: 50%;
+        }
+    }  
+
 }
 @media (max-width: 575px) {
     .header {
@@ -91,6 +129,27 @@
         .title {
             font-size: 20px;
         }
+    }
+    .consultation {
+        .title {
+            font-size: 20px;
+        }
+        &__descr {
+            font-size: 15px;
+        }
+        .feed-form {
+            margin: 36px auto;
+        }
+    }   .feed-form {
+            width: 270px;
+            input {
+                height: 40px;
+            }
+            .button {
+                &_submit {
+                    height: 48px;
+                }
+            }
     }
 
 }
