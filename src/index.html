@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pulse</title>
+    <link rel="icon" href="https://be-gym.ru/images/feature_variant/1/POLAR.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/slick.css">
@@ -105,7 +106,7 @@
                 Просто заполните форму заявки<br>
                 и мы перезвоним вам в течении 10 минут
             </div>
-            <form class="feed-form" action="#">
+            <form id="consultation-form" class="feed-form" action="#">
                 <input name="name" required type="text" placeholder="Ваше имя">
                 <input name="phone" required type="number" placeholder="Ваш телефон">
                 <input name="email" required type="email" placeholder="Ваш E-mail">
@@ -601,9 +602,9 @@
             <div class="modal__subtitle">Просто заполните форму заявки</div>
             <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
             <form class="feed-form feed-form_mt25" action="#">
-                <input name="name" required type="text" placeholder="Ваше имя">
-                <input name="phone" required type="number" placeholder="Ваш телефон">
-                <input name="email" required type="email" placeholder="Ваш E-mail">
+                <input name="name" type="text" placeholder="Ваше имя">
+                <input name="phone" type="number" placeholder="Ваш телефон">
+                <input name="email" type="email" placeholder="Ваш E-mail">
 
                 <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
             </form>         
@@ -635,6 +636,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script defer src="js/script.js"></script>
 </body>
 </html>

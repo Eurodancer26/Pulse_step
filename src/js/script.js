@@ -57,5 +57,33 @@ $(document).ready(function(){
     $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
   });
 
+//ValidateForms
+
+  validateForms('#consultation-form');
+  validateForms('#consultation form');
+  validateForms('#order form');
+  
+  function validateForms(form) {
+    $(form).validate({
+      rules: {
+        name: "required",
+        phone: "required",
+        email: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        name: "Пожалуйста, укажите ваше имя",
+        phone:"Укажите ваш номер телефона",
+        email: {
+          required: "Нам нужен ваш адрес электронной почты, чтобы связаться с вами",
+          email: "Ваш адрес электронной почты должен быть в формате имя@домен.com"
+        }
+      }
+    });
+  }
 });
+
+
 
