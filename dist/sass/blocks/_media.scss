@@ -34,7 +34,6 @@
             width: 80%;
         }
     }
-
 }
 @media (max-width: 991px) {
     .header {
@@ -321,6 +320,9 @@
         }
         &__descr {
             font-size: 13px;
+        }
+        &_mini {
+            min-height: 140px;
         }
     }
 }

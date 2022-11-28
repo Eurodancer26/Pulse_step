@@ -83,6 +83,70 @@ $(document).ready(function(){
       }
     });
   }
+
+  //Masked Input Plugin for jQuery
+  //перед использованием убрать type=number в input
+  $('input[name=phone]').mask("+7 (999) 999-99-99");
+
+
+  $('form').submit(function(e) {
+    e.preventDefault();//отменяет стандартное поведение браузера "перезагрузку страницы"
+    
+    if(!$(this).valid()) {
+      return;    //если форма не прошла валидацию, то ничего делать не будем
+    }            //небудет отправлять пустые данные из формы
+    
+    $.ajax({             //отправляем при помощи метода ajax(), данные на сервер
+      type: "POST",      //отдаём данные на сервер, GET получаем
+      url: "js/mailer/smart.php", //запрос на передачу данных(куда передаём запрос)
+      data: $(this).serialize()  //те данные которые хочу отправить на сервер
+    }).done(function() {
+      $(this).find("input").val("");//отчищаем все инпуты, после отправки
+      $('#consultation, #order').fadeOut();
+      $('.overlay, #thanks').fadeIn('slow');
+
+      $('form').trigger('reset');//все формы обновятся - отчистятся
+    });
+    return false;
+  });
+
+
+  //Smooth scroll and pageup
+  //Плавная прокрутка и переход на страницу
+  
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 664) {
+      $('.pageup').fadeIn();
+    } else {
+      $('.pageup').fadeOut();
+    }
+  });
+
+  //Добавить плавную прокрутку ко всем ссылкам
+  $("a").on('click', function(event) {
+
+    //Убедитесь, что this.hash имеет значение, 
+    //прежде чем переопределять поведение по умолчанию.
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      const hash = this.hash;
+
+      // Использование метода jQuery animate() для плавной прокрутки страницы
+
+      // Необязательное число (800) указывает количество миллисекунд, 
+      //которое требуется для прокрутки до указанной области.
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 300, function(){
+
+        // Добавить решетку (#) к URL-адресу после завершения прокрутки (поведение при нажатии по умолчанию)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
 });
 
 
