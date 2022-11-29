@@ -1,5 +1,4 @@
 'use strict';
-
 //Carusel
 
 $(document).ready(function(){
@@ -116,9 +115,9 @@ $(document).ready(function(){
   
   $(window).scroll(function() {
     if ($(this).scrollTop() > 664) {
-      $('.pageup').fadeIn();
+      $('.pageup').fadeIn().addClass('animate__backInDown').removeClass('animate__fadeOutUpBig');
     } else {
-      $('.pageup').fadeOut();
+      $('.pageup').removeClass('animate__backInDown').fadeOut().addClass('animate__fadeOutUpBig');   
     }
   });
 
@@ -147,6 +146,8 @@ $(document).ready(function(){
       });
     } // End if
   });
+
+  new WOW().init();
 });
 
 
